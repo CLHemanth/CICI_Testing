@@ -2,8 +2,17 @@
 
 var https = require('follow-redirects').https;
 var fs = require('fs');
+var express = require('express');
+const app = express();
 
 var qs = require('querystring');
+
+app.get('/', (req, res) => {
+    res.json({
+        msg: 'Working CI/CD'
+    })
+})
+app.listen(3000)
 
 var options = {
     'method': 'POST',
